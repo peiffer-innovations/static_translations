@@ -1,5 +1,5 @@
 {
-  "button_submit": "Submit",
-  "welcome_message": "Welcome, {name}",
-  "what_is_your_name": "What is your name?"
+  "en": "English",
+  "es": "Spanish",
+  "welcome_message": "Welcome, {name}"
 }

@@ -1,0 +1,21 @@
+name: static_translations
+description: A translations package that always has reliable defaults and code safe keys.
+homepage: https://github.com/peiffer-innovations/static_translations
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^4.1.2
+  meta: ^1.1.8
+  rest_client: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
