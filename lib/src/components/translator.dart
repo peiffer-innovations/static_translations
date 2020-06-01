@@ -146,6 +146,7 @@ class Translator {
     var futures = loaders?.map((e) => e.load(_language, this)) ?? [];
 
     for (var future in futures) {
+      // ignore: unawaited_futures
       future.then((values) => apply(_language, values));
     }
 
