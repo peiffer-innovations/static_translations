@@ -43,7 +43,7 @@ class MyTranslations {
     }
 
     if (entry == null) {
-      throw new Exception('Unable to find TranslationEntry for key: $key');
+      throw Exception('Unable to find TranslationEntry for key: $key');
     }
 
     return entry;
