@@ -87,7 +87,7 @@ void main() async {
         TranslationLoader.asset('assets/languages/$language.json'),
         TranslationLoader.asynchronous(
           TranslationLoader.network(
-            'https://raw.githubusercontent.com/peiffer-innovations/static_translations/master/example/assets/languages/$language.json',
+            'https://raw.githubusercontent.com/peiffer-innovations/static_translations/main/example/assets/languages/$language.json',
           ),
         ),
       ],

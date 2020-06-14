@@ -14,7 +14,7 @@ void main() async {
         TranslationLoader.asset('assets/languages/en.json'),
         TranslationLoader.asynchronous(
           TranslationLoader.network(
-            'https://raw.githubusercontent.com/peiffer-innovations/static_translations/master/example/assets/languages/en.json',
+            'https://raw.githubusercontent.com/peiffer-innovations/static_translations/main/example/assets/languages/en.json',
           ),
         ),
       ],
@@ -22,7 +22,7 @@ void main() async {
         TranslationLoader.asset('assets/languages/es.json'),
         TranslationLoader.asynchronous(
           TranslationLoader.network(
-            'https://raw.githubusercontent.com/peiffer-innovations/static_translations/master/example/assets/languages/es.json',
+            'https://raw.githubusercontent.com/peiffer-innovations/static_translations/main/example/assets/languages/es.json',
           ),
         ),
       ],
@@ -90,6 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _language = _translator.language;
   }
 
+  @override
   void dispose() {
     _subscriptions.forEach((sub) => sub.cancel());
 
@@ -121,12 +122,12 @@ class _MyHomePageState extends State<MyHomePage> {
               items: [
                 for (var language in _translator.supportedLanguages)
                   DropdownMenuItem(
+                    value: language,
                     child: Text(
                       _translator.translate(
                         MyTranslations.fromKey(language),
                       ),
                     ),
-                    value: language,
                   ),
               ],
               onChanged: (value) => setState(() {
