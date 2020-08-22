@@ -1,3 +1,8 @@
+## [1.0.3] - August 22nd, 2020
+
+* Rolling back to meta 1.1.8 due to `flutter_test` incompatiblities
+
+
 ## [1.0.2] - August 22nd, 2020
 
 * Dependency version bump
