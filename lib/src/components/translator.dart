@@ -28,15 +28,17 @@ class Translator {
   /// Finds the [Translator] that was added to the widget tree via [Provider].
   /// If no [Translator] is found on the widget tree then this will return a
   /// default, empty, instance.
-  static Translator of(BuildContext context) {
+  static Translator of([BuildContext? context]) {
     Translator? result;
-    try {
-      result = Provider.of<Translator>(
-        context,
-        listen: false,
-      );
-    } catch (e) {
-      // ignore and use a default instance
+    if (context != null) {
+      try {
+        result = Provider.of<Translator>(
+          context,
+          listen: false,
+        );
+      } catch (e) {
+        // ignore and use a default instance
+      }
     }
 
     return result ??

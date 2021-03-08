@@ -1,4 +1,4 @@
-## [2.0.0] - March 7th, 2021
+## [2.0.0+1] - March 7th, 2021
 
 * Null Safety
 
