@@ -16,10 +16,10 @@ class AssetTranslationLoader implements TranslationLoader {
   AssetTranslationLoader(
     this.asset, {
     this.package,
-  }) : assert(asset?.isNotEmpty == true);
+  });
 
   final String asset;
-  final String package;
+  final String? package;
 
   /// The returned [Future] will wait until the JSON asset is loaded and
   /// processed and then resolve with resulting values.
@@ -35,7 +35,7 @@ class AssetTranslationLoader implements TranslationLoader {
     var result = <String, String>{};
     var converted = json.decode(data);
 
-    converted?.forEach((key, value) => result[key] = value?.toString());
+    converted?.forEach((key, value) => result[key] = value.toString());
     return result;
   }
 }

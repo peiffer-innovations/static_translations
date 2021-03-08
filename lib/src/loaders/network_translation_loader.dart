@@ -16,9 +16,9 @@ class NetworkTranslationLoader implements TranslationLoader {
   NetworkTranslationLoader(
     this.url, {
     this.headers,
-  }) : assert(url?.isNotEmpty == true);
+  });
 
-  final Map<String, String> headers;
+  final Map<String, String>? headers;
   final String url;
 
   /// The returned [Future] will wait until the JSON data is loaded and

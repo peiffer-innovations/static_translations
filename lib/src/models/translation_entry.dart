@@ -12,10 +12,9 @@ class TranslationEntry {
   ///
   /// Neither the [key] nor the [value] may be [null].
   const TranslationEntry({
-    @required this.key,
-    @required this.value,
-  })  : assert(key != null),
-        assert(value != null);
+    required this.key,
+    required this.value,
+  });
 
   /// The key, or identifier, for the translation value.  This is the value that
   /// will be used to find the appropriate translation value from the cache.

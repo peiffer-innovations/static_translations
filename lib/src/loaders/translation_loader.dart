@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:rest_client/rest_client.dart';
 import 'package:static_translations/static_translations.dart';
 
@@ -15,7 +14,7 @@ abstract class TranslationLoader {
   /// constructing an [AssetTranslationLoader] directly.
   factory TranslationLoader.asset(
     String asset, {
-    String package,
+    String? package,
   }) =>
       AssetTranslationLoader(
         asset,
@@ -57,7 +56,7 @@ abstract class TranslationLoader {
   /// constructing an [NetworkTranslationLoader] directly.
   factory TranslationLoader.network(
     String url, {
-    Map<String, String> headers,
+    Map<String, String>? headers,
   }) =>
       NetworkTranslationLoader(
         url,
@@ -75,14 +74,14 @@ abstract class TranslationLoader {
   /// This is a convenience factory constructor and is ultimately a synonym for
   /// constructing an [RestClientTranslationLoader] directly.
   factory TranslationLoader.restClient({
-    Authorizer authorizer,
-    Client client,
-    Reporter reporter,
-    @required Request request,
+    Authorizer? authorizer,
+    Client? client,
+    Reporter? reporter,
+    required Request request,
     int retryCount = 0,
     Duration retryDelay = const Duration(seconds: 1),
-    DelayStrategy retryDelayStrategy,
-    Duration timeout,
+    DelayStrategy? retryDelayStrategy,
+    Duration? timeout,
   }) =>
       RestClientTranslationLoader(
         authorizer: authorizer,

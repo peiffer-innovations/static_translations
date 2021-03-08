@@ -4,17 +4,17 @@ import 'package:static_translations/static_translations.dart';
 void main() {
   test('supported languages', () {
     var translator = Translator(language: 'en', loaders: {});
-    expect(translator.supportedLanguages?.toString(), [].toString());
+    expect(translator.supportedLanguages.toString(), [].toString());
 
     translator = Translator(language: 'en', loaders: {
       'en': [],
     });
-    expect(translator.supportedLanguages?.toString(), ['en'].toString());
+    expect(translator.supportedLanguages.toString(), ['en'].toString());
 
     translator = Translator(language: 'en', loaders: {
       'en': [],
-      'es': null,
+      'es': [],
     });
-    expect(translator.supportedLanguages?.toString(), ['en', 'es'].toString());
+    expect(translator.supportedLanguages.toString(), ['en', 'es'].toString());
   });
 }

@@ -9,7 +9,7 @@ class AsyncTranslationLoader implements TranslationLoader {
   /// when complete.
   AsyncTranslationLoader(
     this.loader,
-  ) : assert(loader != null);
+  );
 
   final TranslationLoader loader;
 

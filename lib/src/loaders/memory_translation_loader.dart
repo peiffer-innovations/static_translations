@@ -6,7 +6,7 @@ class MemoryTranslationLoader implements TranslationLoader {
   /// This is  non-blocking as it does not need to wait for any external data.
   MemoryTranslationLoader(
     this.values,
-  ) : assert(values != null);
+  );
 
   final Map<String, String> values;
 

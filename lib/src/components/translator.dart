@@ -13,25 +13,23 @@ class Translator {
   /// Upon calling [initialize], the list of loaders for the passed in
   /// [language] will be used.
   Translator({
-    @required String language,
-    @required Map<String, List<TranslationLoader>> loaders,
-  })  : assert(language?.isNotEmpty == true),
-        assert(loaders != null),
-        _language = language,
+    required String language,
+    required Map<String, List<TranslationLoader>> loaders,
+  })   : _language = language,
         _loaders = loaders;
 
   final Map<String, List<TranslationLoader>> _loaders;
+  final Map<String, String> _translations = {};
 
   String _language;
-  Map<String, String> _translations = {};
-  StreamController<void> _translationsStreamController =
+  StreamController<void>? _translationsStreamController =
       StreamController<void>.broadcast();
 
   /// Finds the [Translator] that was added to the widget tree via [Provider].
   /// If no [Translator] is found on the widget tree then this will return a
   /// default, empty, instance.
   static Translator of(BuildContext context) {
-    Translator result;
+    Translator? result;
     try {
       result = Provider.of<Translator>(
         context,
@@ -49,7 +47,7 @@ class Translator {
   }
 
   /// Returns the currently set language.
-  String get language => _language;
+  String? get language => _language;
 
   /// Returns the list of language codes this instance has been set up to
   /// support.
@@ -59,7 +57,7 @@ class Translator {
   /// change.  Applications may choose to listen to this to be notified when
   /// lazy loaded translations are applied so the UI can be updated
   /// appropriately.
-  Stream<void> get translationsStream => _translationsStreamController?.stream;
+  Stream<void>? get translationsStream => _translationsStreamController?.stream;
 
   /// Initializes the [Translator] by calling, and `await`-ing all loaders for
   /// the this was constructed with.
@@ -75,10 +73,6 @@ class Translator {
   /// Disposes the [Translator] and releases all associated resources.  Once
   /// called, future calls to this instance will result in errors.
   void dispose() {
-    _language = null;
-    _loaders?.clear();
-
-    _translations = null;
     _translationsStreamController?.close();
     _translationsStreamController = null;
   }
@@ -89,10 +83,10 @@ class Translator {
   /// This is meant to provide support for lazy loading translations.
   void apply(
     String language,
-    Map<String, String> values,
+    Map<String, String>? values,
   ) {
     if (language == _language) {
-      _translations?.addAll(values ?? {});
+      _translations.addAll(values ?? {});
       _translationsStreamController?.add(null);
     }
   }
@@ -129,7 +123,7 @@ class Translator {
   /// ```
   String translate(
     TranslationEntry entry, [
-    Map<String, dynamic> args,
+    Map<String, dynamic>? args,
   ]) {
     var translated = _translations[entry.key] ?? entry.value;
 
@@ -142,14 +136,16 @@ class Translator {
 
   /// Loads translations from all the given loaders and returns when all have
   /// completed.
-  Future<void> _load(List<TranslationLoader> loaders) async {
-    var futures = loaders?.map((e) => e.load(_language, this)) ?? [];
+  Future<void> _load(List<TranslationLoader>? loaders) async {
+    var futures = loaders?.map((e) => e.load(_language, this));
 
-    for (var future in futures) {
-      // ignore: unawaited_futures
-      future.then((values) => apply(_language, values));
+    if (futures != null) {
+      for (var future in futures) {
+        // ignore: unawaited_futures
+        future.then((values) => apply(_language, values));
+      }
+
+      await Future.wait(futures);
     }
-
-    await Future.wait(futures);
   }
 }

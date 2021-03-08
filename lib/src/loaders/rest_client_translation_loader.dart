@@ -13,24 +13,23 @@ class RestClientTranslationLoader implements TranslationLoader {
   /// avoid blocking the [Translator] on [initialize], [load], or [reload].
   RestClientTranslationLoader({
     this.authorizer,
-    Client client,
+    Client? client,
     this.reporter,
-    @required this.request,
+    required this.request,
     this.retryCount = 0,
     this.retryDelay = const Duration(seconds: 1),
     this.retryDelayStrategy,
     this.timeout,
-  })  : assert(request != null),
-        client = client ?? Client();
+  }) : client = client ?? Client();
 
-  final Authorizer authorizer;
+  final Authorizer? authorizer;
   final Client client;
-  final Reporter reporter;
+  final Reporter? reporter;
   final Request request;
   final int retryCount;
   final Duration retryDelay;
-  final DelayStrategy retryDelayStrategy;
-  final Duration timeout;
+  final DelayStrategy? retryDelayStrategy;
+  final Duration? timeout;
 
   /// The returned [Future] will wait until the JSON data is loaded and
   /// processed from the network and call and then resolve with resulting
@@ -53,7 +52,7 @@ class RestClientTranslationLoader implements TranslationLoader {
     var result = <String, String>{};
     var converted = response.body;
 
-    converted?.forEach((key, value) => result[key] = value?.toString());
+    converted?.forEach((key, value) => result[key] = value.toString());
     return result;
   }
 }
