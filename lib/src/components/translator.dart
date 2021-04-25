@@ -49,7 +49,7 @@ class Translator {
   }
 
   /// Returns the currently set language.
-  String? get language => _language;
+  String get language => _language;
 
   /// Returns the list of language codes this instance has been set up to
   /// support.

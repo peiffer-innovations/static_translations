@@ -2,7 +2,7 @@ name: static_translations
 description: A translations package that always has reliable defaults and code safe keys.
 homepage: https://github.com/peiffer-innovations/static_translations
 
-version: 2.0.0+1
+version: 2.0.1
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

@@ -1,3 +1,8 @@
+## [2.0.1] - April 25th, 2021
+
+* Example updates for Null Safety
+
+
 ## [2.0.0+1] - March 7th, 2021
 
 * Null Safety

@@ -36,10 +36,9 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   MyApp({
-    Key key,
-    @required this.translator,
-  })  : assert(translator != null),
-        super(key: key);
+    Key? key,
+    required this.translator,
+  }) : super(key: key);
 
   final Translator translator;
 
@@ -61,8 +60,8 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({
-    Key key,
-    this.name,
+    Key? key,
+    required this.name,
   }) : super(key: key);
 
   final String name;
@@ -73,15 +72,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<StreamSubscription> _subscriptions = [];
-  String _language;
-  Translator _translator;
+  late String _language;
+  late Translator _translator;
 
   @override
   void initState() {
     super.initState();
 
     _translator = Translator.of(context);
-    _subscriptions.add(_translator.translationsStream.listen((_) {
+    _subscriptions.add(_translator.translationsStream!.listen((_) {
       if (mounted == true) {
         setState(() {});
       }
@@ -131,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
               ],
               onChanged: (value) => setState(() {
-                _language = value;
+                _language = value?.toString() ?? 'en';
                 _translator.setLanguage(_language);
               }),
               value: _language,

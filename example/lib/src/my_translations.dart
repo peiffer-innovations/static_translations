@@ -33,7 +33,7 @@ class MyTranslations {
   ];
 
   static TranslationEntry fromKey(String key) {
-    TranslationEntry entry;
+    TranslationEntry? entry;
 
     for (var e in _all) {
       if (e.key == key) {
