@@ -1,3 +1,8 @@
+## [2.0.1+1] - May 9th, 2021
+
+* Dependency updates
+
+
 ## [2.0.1] - April 25th, 2021
 
 * Example updates for Null Safety
