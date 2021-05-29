@@ -15,7 +15,7 @@ class Translator {
   Translator({
     required String language,
     required Map<String, List<TranslationLoader>> loaders,
-  })   : _language = language,
+  })  : _language = language,
         _loaders = loaders;
 
   final Map<String, List<TranslationLoader>> _loaders;

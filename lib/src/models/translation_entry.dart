@@ -26,4 +26,7 @@ class TranslationEntry {
   /// surrounding the parameter with curley braces.  Example:
   /// `'Hello, {name}'`.
   final String value;
+
+  @override
+  String toString() => '[$key]: "$value"';
 }
