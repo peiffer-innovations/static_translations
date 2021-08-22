@@ -14,7 +14,7 @@ class AsyncTranslationLoader implements TranslationLoader {
   final TranslationLoader loader;
 
   /// This will call the [loader] and then immediately resolve the [Future] with
-  /// [null].  Once the associated [loader]'s [Future] resolves, this will then
+  /// `null`.  Once the associated [loader]'s [Future] resolves, this will then
   /// [apply] the values to the [translator].
   @override
   Future<Map<String, String>> load(

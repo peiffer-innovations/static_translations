@@ -1,3 +1,8 @@
+## [2.0.2+1] - August 22nd, 2021
+
+* Dependency update
+
+
 ## [2.0.2] - May 29th, 2021
 
 * Added `toString` to `TranslationEntry`

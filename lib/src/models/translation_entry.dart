@@ -10,7 +10,7 @@ class TranslationEntry {
   /// braces.  Example:
   /// `'Hello, {name}'`.
   ///
-  /// Neither the [key] nor the [value] may be [null].
+  /// Neither the [key] nor the [value] may be `null`.
   const TranslationEntry({
     required this.key,
     required this.value,
