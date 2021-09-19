@@ -1,3 +1,8 @@
+## [2.0.2+2] - September 19th, 2021
+
+* Analysis fix for Flutter 2.5.0
+
+
 ## [2.0.2+1] - August 22nd, 2021
 
 * Dependency update
