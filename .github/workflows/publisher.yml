@@ -16,7 +16,7 @@ jobs:
       - name: Validate
         uses: peiffer-innovations/actions-flutter-validate@v1.1.1
         with:
-          flutter_package: false
+          flutter_package: true
       - name: Publish
         uses: peiffer-innovations/actions-pub-publish@v1.0.0
         with:
