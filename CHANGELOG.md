@@ -1,3 +1,8 @@
+## [2.0.2+3] - November 14th, 2021
+
+* Switched GH workflow publish action
+
+
 ## [2.0.2+2] - September 19th, 2021
 
 * Analysis fix for Flutter 2.5.0
