@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [static_translations](#static_translations)
+  - [Using the library](#using-the-library)
+  - [Creating Static References](#creating-static-references)
+  - [Using Loaders](#using-loaders)
+  - [Binding to Provider](#binding-to-provider)
+  - [Using Translation Values](#using-translation-values)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # static_translations
 
 A Flutter library to provide a consistent and reliable way to reference 
