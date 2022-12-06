@@ -7,7 +7,7 @@ import 'package:static_translations_example/src/my_translations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  var translator = Translator(
+  final translator = Translator(
     language: 'en',
     loaders: {
       'en': [
@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             DropdownButton(
               items: [
                 for (var language in _translator.supportedLanguages)

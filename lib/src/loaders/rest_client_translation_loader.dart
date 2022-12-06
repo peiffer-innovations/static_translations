@@ -39,7 +39,7 @@ class RestClientTranslationLoader implements TranslationLoader {
     String language,
     Translator translator,
   ) async {
-    var response = await client.execute(
+    final response = await client.execute(
       authorizer: authorizer,
       reporter: reporter,
       request: request,
@@ -49,8 +49,8 @@ class RestClientTranslationLoader implements TranslationLoader {
       timeout: timeout,
     );
 
-    var result = <String, String>{};
-    var converted = response.body;
+    final result = <String, String>{};
+    final converted = response.body;
 
     converted?.forEach((key, value) => result[key] = value.toString());
     return result;

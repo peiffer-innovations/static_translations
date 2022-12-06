@@ -29,7 +29,7 @@ class NetworkTranslationLoader implements TranslationLoader {
     String language,
     Translator translator,
   ) async {
-    var loader = RestClientTranslationLoader(
+    final loader = RestClientTranslationLoader(
       request: Request(
         url: url,
         headers: headers,

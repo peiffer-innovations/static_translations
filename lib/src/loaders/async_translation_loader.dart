@@ -20,7 +20,7 @@ class AsyncTranslationLoader implements TranslationLoader {
     String language,
     Translator translator,
   ) {
-    var future = loader.load(
+    final future = loader.load(
       language,
       translator,
     );

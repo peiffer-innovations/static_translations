@@ -28,12 +28,12 @@ class AssetTranslationLoader implements TranslationLoader {
     String language,
     Translator translator,
   ) async {
-    var data = await rootBundle.loadString(
+    final data = await rootBundle.loadString(
       package?.isNotEmpty == true ? 'packages/$package/$asset' : asset,
     );
 
-    var result = <String, String>{};
-    var converted = json.decode(data);
+    final result = <String, String>{};
+    final converted = json.decode(data);
 
     converted?.forEach((key, value) => result[key] = value.toString());
     return result;

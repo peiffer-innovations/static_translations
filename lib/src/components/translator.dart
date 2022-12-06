@@ -139,7 +139,7 @@ class Translator {
   /// Loads translations from all the given loaders and returns when all have
   /// completed.
   Future<void> _load(List<TranslationLoader>? loaders) async {
-    var futures = loaders?.map((e) => e.load(_language, this));
+    final futures = loaders?.map((e) => e.load(_language, this));
 
     if (futures != null) {
       for (var future in futures) {
