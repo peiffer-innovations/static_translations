@@ -3,22 +3,21 @@ description: 'A translations package that always has reliable defaults and code 
 homepage: 'https://github.com/peiffer-innovations/static_translations'
 version: '2.1.1+20'
 
-environment: 
+environment:
   sdk: '>=2.18.0 <3.0.0'
 
-dependencies: 
-  flutter: 
+dependencies:
+  flutter:
     sdk: 'flutter'
-  meta: '^1.7.0'
+  meta: '^1.8.0'
   provider: '^6.0.5'
   rest_client: '^2.2.0+5'
 
-dev_dependencies: 
-  flutter_test: 
+dev_dependencies:
+  flutter_test:
     sdk: 'flutter'
 
-
-ignore_updates: 
+ignore_updates:
   - 'archive'
   - 'async'
   - 'boolean_selector'
