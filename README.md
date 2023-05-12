@@ -1,5 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**ARCHIVED**: This is no longer maintained as the built in [i18n](https://pub.dev/packages/i18n) packages have become a far better superior solution.
+
 **Table of Contents**
 
 - [static_translations](#static_translations)
